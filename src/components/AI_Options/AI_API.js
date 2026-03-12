@@ -14,6 +14,7 @@ const AI_API = ({
   initialMessages = [],
   lastEditedText,
   aiProvider = "chatgpt", // "chatgpt" | "claude" | "gemini"
+  backgroundAIMessage = "",
 }) => {
   // Store chat messages in state (we keep everything as plain strings internally)
   const [messages, setMessages] = useState(() =>
@@ -81,13 +82,13 @@ const AI_API = ({
 
     // ----------------------------
     // Add writing context so the AI can respond based on what the user wrote:
-    //CONFIG YOU WILL EDIT: Insted of "this is what i have written so far,
+    //CONFIG YOU WILL EDIT: You can give the AI_API any background message that you would like.
     // you can change it to give the AI context (I am supposed to write about INSTRUCTIONS) OR
     // you can change it to give the AI instructions (for example: Please answer in 1-2 sentences only)"
     // ----------------------------
     const writingContext = lastEditedText
-      ? `This is what I have written so far: ${toText(lastEditedText)}`
-      : `My text is currently empty.`;
+      ? $`{backgroundAIMessage}. This is what I have written so far: ${toText(lastEditedText)}`
+      : `${backgroundAIMessage} My text is currently empty.`;
 
     // IMPORTANT: include the new message in the history we send (state updates are async)
     const fullMessages = [...messages, newUserMessage];

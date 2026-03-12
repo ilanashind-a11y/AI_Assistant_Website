@@ -18,6 +18,11 @@ const AIOpensAndCloses = () => {
   // Choose provider: "chatgpt" | "claude" | "gemini"
   const aiProvider = "chatgpt";
 
+  //CONFIG YOU WILL EDIT:
+  //Here, you can give the conversational AI background informaiton about the task,
+  // or instructions to reply in a certain way.
+  const backgroundAIMessage = "";
+
   // ----------------------------
   // LOGGING STATE (what we save)
   // ----------------------------
@@ -345,6 +350,7 @@ const AIOpensAndCloses = () => {
               ]}
               lastEditedText={currentLastEditedText}
               aiProvider={aiProvider}
+              backgroundAIMessage={backgroundAIMessage}
             />
           </div>
         </div>
