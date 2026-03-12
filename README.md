@@ -7,7 +7,7 @@ The README file offers a step-by-step instructions that are divided into four ma
 1. [Installation and Local Setup](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#step-1-installation-and-local-setup)
    1. [Installing Required Applications](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#step-11-installation-required-applications)
    2. [Local Setup and Environment Variables](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#step-12-local-setup-and-environment-variables)
-2. [Preparing your experimental conditions](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#step-2-preparing-your-conditions)
+2. [Preparing your experimental conditions](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#step-2-preparing-your-experimental-conditions)
    1. Choose your experimental conditions according to your research goals
    2. Details regarding each experimental condition
    3. Editing your experimental conditions
@@ -17,9 +17,9 @@ The README file offers a step-by-step instructions that are divided into four ma
    3. [Downloading the submissions](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#download-your-submissions)
 4. [Data Cleaning](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#step-4-data-cleaning)
 
-# <code style="color : #A8057A">_Step 1: Installation and Local Setup_</code>
+# <code>_Step 1: Installation and Local Setup_</code>
 
-# <code style="color : #AF4788">_Step 1.1: Installation Required Applications_</code>
+# <code>_Step 1.1: Installation Required Applications_</code>
 
 # Download GitHub
 
@@ -71,7 +71,7 @@ After you download github, to save this code and get it ready to edit, follow th
 
 8. Next, open the local repository in your preferred IDE (for exmaple, using [Visual Studio Code](https://code.visualstudio.com/)). Throughout the code, you can look for relevant change suggestions by searching **CONFIG YOU WILL EDIT**. To search for this term across files, you can click `Ctrl+shift+f`. Now, you can make a small change just to test that your changes are being saved.
 
-9. Save your changes and push them to your fork:
+9. Save your changes, by saving the file, and push them to your fork:
 
    ```
    git add .
@@ -87,7 +87,7 @@ After you download github, to save this code and get it ready to edit, follow th
 
 # Download Node JS
 
-First, make sure Node.js is downloaded (you can install the windows installer).
+First, make sure Node.js is downloaded (you can install the windows installer). This will allow you to locally test your code and make sure it looks as you expect it to look.
 
 You can download it from the following website: https://nodejs.org/en/download
 
@@ -98,13 +98,13 @@ node -v
 npm -v
 ```
 
-# <font color = 'A057A'>_Step 1.2: Local Setup and Environment Variables_</font>
+# <code>_Step 1.2: Local Setup and Environment Variables_</code>
 
 # Backend Folder (API and Environment Variables)
 
 This project includes a `backend/` folder that runs a small server (proxy) for:
 
-1. Calling AI providers (OpenAI / Claude / Gemini) securely.
+1. Calling AI providers (ChatGPT / Claude / Gemini) securely.
 2. Handling AWS actions (e.g., S3) securely.
 
 **Why do we need a backend?**
@@ -118,11 +118,11 @@ This project includes a `backend/` folder that runs a small server (proxy) for:
 - **server.js**: The backend server. It exposes an endpoint like:
   - `POST /api/ai` (the frontend sends `{ provider, chatHistory }` and receives `{text}`).
 - **package.json**: Backend dependencies (express, axios, cors, dotenv, etc.).
-- **.env**: Backend secrets (API keys + AWS keys). This file must NOT be uploaded to GitHub.
+- **.env**: Backend secrets (API keys + AWS keys). _This file must NOT be uploaded to GitHub_.
 
 ### Backend environment variables
 
-Create `backend/.env` file (name the file `.env` and put it in the `backend` folder) and add your secrets there (see the Environment Variables section).
+Create `backend/.env` file (name the file `.env` and put it in the `backend` folder) and add your secrets there.
 
 - In this file you will need to write 6 rows, just like this:
   ```
@@ -133,10 +133,10 @@ Create `backend/.env` file (name the file `.env` and put it in the `backend` fol
   CLAUDE_KEY=Your claude key
   GEMINI_KEY=Your gemini key
   ```
-- Depending on which AI you will use, you will need to generate a key. Please note models' abilities and pricing.
+- Depending on which LLM you will use, you will need to generate a key. Please note models' abilities and pricing.
 
-  Note that if you want to use only some of the following AI's you can leave the key empty.
-  For example, if you only want to use ChatGPT as your AI, you can write `GEMINI_KEY=''` and `CLAUDE_KEY=''`:
+  Note that if you want to use only some of the following LLMs, you can leave the key empty.
+  For example, if you only want to use ChatGPT as your LLM, you can write `GEMINI_KEY=''` and `CLAUDE_KEY=''`:
   1. To generate ChatGPT key: `OPENAI_KEY=Bearer XXXX`
 
      To get a GPT key, go to [OpenAI API's official website](https://openai.com/api/). You will need to create an account, and get a personal key. It is important to keep this key private, as this is what allows you to connect to ChatGPT.
@@ -146,69 +146,99 @@ Create `backend/.env` file (name the file `.env` and put it in the `backend` fol
      To generate a claude key, go to [Claude API's official website](https://claude.com/platform/api). You will need to create an account, and get a personal key. It is important to keep this key private, as this is what allows you to connect to Claude.
 
   3. To generate Gemini key: `GEMINI_KEY=AIzaSy...`
-     To generate a claude key, go to [Gemini API's official website](https://ai.google.dev/gemini-api/docs/api-key). You will need to create an account, and get a personal key. It is important to keep this key private, as this is what allows you to connect to Gemini.
+     To generate a gemini key, go to [Gemini API's official website](https://ai.google.dev/gemini-api/docs/api-key). You will need to create an account, and get a personal key. It is important to keep this key private, as this is what allows you to connect to Gemini.
 
-- For the other environment keys, please go to the [Amazon Web Services (AWS) section](<#Amazon_Web_Services_(AWS)>).
-- **Make sure `backend/.env` is in `.gitignore`** (in your local code) before you push your code again to github.
+- For the other environment keys, please go to the [Amazon Web Services (AWS) section](<#Amazon_Web_Services_(AWS)>) (or keep following this tutorial, we'll get there).
+- **Make sure `backend/.env` is in `.gitignore`** (in your local code) before you push your code again to github. To do that, you need to have a line that says `backend/.env` inside your .gitignore file.
 
-- **_backend/server.js_**: Calls OpenAI/Claude/Gemini securely (API keys stay server-side). You can change model names and max tokens here.
+- **_backend/server.js_**: Calls ChatGPT/Claude/Gemini securely (API keys stay server-side). You can change model names and max tokens here.
 
-  > You may change the components of each AI's API: The default is max_tokens = 1000, and the following models: gpt-4o (ChatGPT), 2.5-flash (Gemini), 4 sonnet (Clause). You may adjust these to your liking.
+  > You may change the components of each AI's API: The default is max_tokens = 1000, and the following models: gpt-4o (ChatGPT), 2.5-flash (Gemini), 4 sonnet (Claude). You may adjust these to your liking.
 
   > You can find more information about each AI's models on their official API website, and choose the model that best fits your needs.
 
-# <font color = 'A8057A'>_Step 2: Preparing your Conditions_</font>
+# <code>_Step 2: Preparing your Conditions_</code>
 
-# Code Overview:
+# <code>_Step 2.1: Choose your experimental conditions according to your research goals_</code>
 
-Here you can find important information about all pages:
+Now it's time for you to define your goal, and follow the instructions below to find the experimental conditions that suit your goals. The platform allows you to choose between five experimental conditions. Here, we provide the summary table which includes the example research goals and corresponding experimental conditions. For the full examples, please check out the full paper.
 
-| Folder                                                                                                        | Brief Information                                                                                |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| [Components Folder](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#components-folder) | Reusable UI building blocks (e.g., buttons, modals, editor parts) used across the app.           |
-| [AI Options Folder](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#ai_options-folder) | Code that handles the AI chat/providers (ChatGPT/Claude/Gemini), message sending, and responses. |
-| [Pages Folder](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#pages-folder)           | Full screens/routes of the app (each page is a main view the user can navigate to).              |
-| [App CSS](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#appcss)                      | Main styling file that controls the app’s look (colors, spacing, layout, chat bubbles, etc.).    |
+| Research goals                                                                                                                                                                | Condition A Name                                                                                                                       | Condition B Name                                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| The effect of having the option to use conversational AI vs. having no such option.                                                                                           | Always Visible AI                                                                                                                      | No AI                                                                                    |
+| The effect of having a constant presence of conversational AI vs. having the option to close and reopen it.                                                                   | Always Visible AI                                                                                                                      | Toggleable AI                                                                            |
+| The effect of automatic exposure vs. participant-initiated exposure to the conversational AI.                                                                                 | Toggleable AI                                                                                                                          | Participant-Initiated AI                                                                 |
+| The effects of writing that is produced only through interacting with AI vs. through interacting and writing independently.                                                   | Conversational AI Only                                                                                                                 | Always Visible AI                                                                        |
+| The effects of writing entirely with conversational AI vs. completely independently.                                                                                          | Conversational AI Only                                                                                                                 | No AI                                                                                    |
+| The effects of incorporating conversational AI's words vs. not.                                                                                                               | Turn on copy-paste flags (same AI condition: Always Visible AI, Toggleable AI, Participant-Initiated AI).                              | Turn off copy-paste flags(same AI condition, duplicated).                                |
+| The effects of immediate versus delayed exposure to the option to use conversational AI.                                                                                      | Adjust the delay to 100 milliseconds (same AI condition: Always Visible AI, Toggleable AI, Participant-Initiated AI).                  | Adjust the delay to X milliseconds (same AI condition, duplicated).                      |
+| The effects of different background information (instructions) sent to the conversational AI.                                                                                 | Change the `backgroundAIMessage` (same AI condition: Always Visible AI, Toggleable AI, Participant-Initiated AI).                      | Change the `backgroundAIMessage` (same AI condition, duplicated).                        |
+| The effects of different LLMs powering the conversational AI                                                                                                                  | Change the `aiProvider` to ChatGPT, Gemini, or Claude (same AI condition: Always Visible AI, Toggleable AI, Participant-Initiated AI). | Change the `aiProvider` to ChatGPT, Gemini, or Claude (same AI condition, duplicated).   |
+| The effects of different instructions (writing about one vs. another topic).                                                                                                  | Change the instructions as specified in the condition file (same condition).                                                           | Change the instructions as specified in the condition file (same condition, duplicated). |
+| Use the conversational AI as an addition to the experiments for greater control and an easier record of all messages exchanged between participants and the conversational AI | Conversational AI Only                                                                                                                 |
 
-## Components Folder
+# <code>_Step 2.2 Details regarding each experimental condition_ </code>
 
-Here, you will find information about ChatGPT, Claude or Gemini's API, the text editor, and the updated data. For each AI, you can only change the specific model of AI, number of tokens, etc. See information about AI_API.js for relevant information.
+Now that you defined your goal, and decided on the conditions you will use for your experiment. Time to learn moe in depth about each of the experimental conditions.
 
-- **_LogTable.js_**: A React functional component that receives an array of logs and displays each log’s timestamp and text in a two-column HTML table.
-- **_Modal.js_**: A popup window that shows a message and buttons to confirm or cancel.
-- **_QuillTextEditor.js_**: The text editor part, with a custom toolbar (and optional “AI Assistant” button) that can block pasting, track what the user types over time with timestamps, and send the latest text to the parent for things like word count.
-- **_Button.js_**: A clickable button that can run a function and then take the user to a different page in the app.
-- [**_AI_Options Folder_**](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#ai_options-folder).
+The following presents all five experimental conditions the platform offers in more detail, and instructions on how to duplicate conditions. Note that all conditions are located in the `src/pages' folder:
 
-### AI_Options Folder:
+> Note, In the Always Visible AI, Toggleable AI, and Participant-Initiated AI conditions, researchers can turn on and off the option to copy and paste from the conversational AI to the text editor and vice versa according to researchers' goals.
+>
+> Moreover, researchers can change the LLM powering the conversational AI to ChatGPT, Gemini, or Claude to compare different LLMs.
+>
+> Finally, in all three conditions, participants who try to submit before they meet the adjustable word count threshold and minimum time spent in the writing task (default thresholds are 50 words and 3 minutes) will receive a customizable pop-up message.
 
-This folder contains:
+1. **Always Visible AI Condition**:
+   - **_Purpose_**: This condition includes a text editor and conversational AI interface. The condition allows researchers to test the effects of constantly having the option to use conversational AI.
+   - **_Differences from other conditions_**: Compared to the participant-initiated condition, here, the conversational AI automatically appears after a set number of seconds (default is 100 milliseconds = appearing upon page load). Compared to the toggleable-AI condition, here, participants cannot close and reopen the conversational AI interface.
+   - **_Route Suffix_**: Add `/u` to the base link of the platform \*adjusted in `Routes,js` file, located in the pages folder.
+   - **_Default participant-code_**: A default prefix of "AVA" and a suffix of U.
 
-- **Message Components subfolder**:
+2. **Toggleable AI Condition**:
+   - **_Purpose_**: This condition includes a text editor and a toggleable conversational AI interface, meaning that participants can close and reopen the conversational AI. The condition allows researchers to test the effects of having the option to close and reopen the conversational AI.
+   - **_Differences from other conditions_**: Compared to the Always Visible AI condition, in which the AI is constantly visible, here, participants can close and reopen that conversational AI. Compared to the participant-initiated condition, in which the conversational AI opens after participants press a button, here, the conversational AI interface opens after a set number of seconds.
+   - **_Route Suffix_**: Add `/o` to the base link of the platform \*adjusted in `Routes,js` file, located in the pages folder.
+   - **_Default participant-code_**: A default prefix of "TA" and a suffix of O.
+3. **Participant-Initiated AI Condition**:
+   - **_Purpose_**: This condition includes a text editor and a conversational AI interface, where the conversational AI appears only if participants choose to activate it themselves, by pressing a button in the text editor's toolbar.
+   - **_Differences from other conditions_**: Compared to the Always Visible AI condition, participants can close and reopen the conversational AI interface. Compared to both Always Visible AI and Toggleable AI conditions, in which the conversational AI automatically opens after a set number of seconds, here, participants must actively press a button in order to activate it.
+   - **_Route Suffix_**: Add `/b` to the base link of the platform \*adjusted in `Routes,js` file, located in the pages folder.
+   - **_Default participant-code_**: A default prefix of "PI" and a suffix of B.
 
-  > **_MessageHistory.js_**: A chat message list that automatically scrolls down to show the newest message whenever a new message is added.
+4. **No AI Condition**:
+   - **_Purpose_**: This condition includes only a text editor. It allows researchers to test a setting in which participants do not have access to conversational AI, and it can serve as a control condition for comparison with all other AI-available conditions.
+   - **_Route Suffix_**: Add `/c` to the base link of the platform \*adjusted in `Routes,js` file, located in the pages folder.
+   - **_Default participant-code_**: A default prefix of "NA" and a suffix of C.
 
-  > **_MessageInput.js_**: A message box that lets the user type a chat message and send it by clicking Send or pressing Enter.
+5. **Conversational AI Only Condition**:
+   - **_Purpose_**: This condition includes only a conversational AI interface. It allows researchers to examine how users interact with conversational AI and to study writing produced entirely through AI. It can also be added to experiments when researchers want greater control over the instructions or background information given to the LLM, as well as an easy way to record all messages exchanged between participants and the conversational AI.
+   - **_Differences from other conditions_**: Compared to the No AI condition, in which participants need to rely entirely on themselves for writing, here, participants need to interact with the conversational AI.
+   - **_Route Suffix_**: Add `/a` to the base link of the platform \*adjusted in `Routes,js` file, located in the pages folder.
+   - **_Default participant-code_**: A default prefix of "OA" and a suffix of A.
 
-- **_AI_API.js_**: A chat component that sends your messages (including all chat history) to the backend proxy (`/api/ai`) and shows the AI’s replies on the screen.
+**Creating new conditions**:
 
-  > AI settings such as model names and max tokens are configured in the backend (`backend/server.js`) because the backend is the part that communicates with OpenAI/Claude/Gemini securely.
+- **_Purpose_**: allowing researchers to test research goals 6-10 specified in Table 1, which require duplicating a condition.
+- **_How to duplicate_**:
+  1. Create a new JavaScript file (.js file) by pressing the 'new file' button.
+  2. Copy-paste the original condition's content into the new one.
+  3. Change the name of the condition by going to the last line 'export default NAME' and changing all the appearances of the name to fit your new condition (press 'Ctrl+F' to find all the appearances of the condition's name).
+  4. Create a specific path to the new condition, access the `Routes.js` file, which is located in the `src/pages` folder. In the `Routes.js` file, add an import line (import NAME from "./JS_FILE_NAME";), and a Route path, as instructed in the file's comments.
 
-## Pages Folder
+# <code>_Step 2.3: Editing your experimental conditions_</code>
 
-This folder includes your conditions, link address, and thankyou webpage which shows up after the users submit their texts. For more information, see each code's comments.
+After you decided on your research goal and got more familiar with the experimental conditions you will use. It is time to edit them!
 
-- **_Routes.js_**: Responsible for the "tree" of the website links. Here, you can add the route to your conditions.
-- **_ThankYou.js_**: This is the webpage users see after submitting their texts. You can adjust the instructions there according to the flow of your experiment.
-- **_AIStillPage.js_**: This is the first condition, where users immediately have access to the AI, and cannot close the AI. Feel free to look for `CONFIG YOU WILL EDIT` for recommended changes.
-- **_ButtonPress.js_**: The AI starts CLOSED and opens only if the participant clicks the AI button in the editor toolbar. We log when the AI was first opened (ms after page load) plus chat open/close/collapse events. Feel free to look for `CONFIG YOU WILL EDIT` for recommended changes.
-- **_AIOpensAndCloses.js_**: The AI assistant opens automatically after 20 seconds, and participants can open and close the AI chat interface. Feel free to look for `CONFIG YOU WILL EDIT` for recommended changes. You can adjust this condition to 0 seconds, so the AI immediately appears but participants can open and close the AI chat interface.
-- **_OnlyEditor.js_**: Participants write with no AI assistant (editor-only baseline). Feel free to look for `CONFIG YOU WILL EDIT` for recommended changes.
-- **_OnlyAI.js_**: Participants chat with the AI only (no text editor). Feel free to look for `CONFIG YOU WILL EDIT` for recommended changes.
+For relevant change suggestions only, search **`CONFIG YOU WILL EDIT`** (press `Ctrl+F`) to find out about all appearances of the required or recommended adjustments in the experiemntal file.
+
+We remind you that if you want to view all possible adjustments you can press `Shift+Ctrl+F` to search for `CONFIG YOU WILL EDIT` across files.
+
+Moreover, make sure you are working with the LLM version you like, as specified earlier in step 1.2.
 
 ## App.css
 
-App.css is the main file that controls how the app looks (colors, spacing, fonts, layout).
+App.css is the main file that controls how the app looks (colors, spacing, fonts, layout). Therefore, if you needed to change anything regarding the _style_ of the page, you will need to change the elements in `App.css`:
 
 To preview and debug style changes, open **Chrome DevTools**:
 
@@ -218,11 +248,13 @@ To preview and debug style changes, open **Chrome DevTools**:
 
 Then click the **Elements** tab, select an element on the page, and you’ll see the CSS rules (including from `App.css`) on the right side.
 
-# <font color = 'A8057A'>_Step 3: Local Testing and Deployment_</font>
+# <code>_Step 3: Local Testing and Deployment_</code>
 
-# <font color = 'A057A'>_Step 3.1: Local testing to make sure your conditions look as you expect them to look_</font>
+# <code>_Step 3.1: Local testing to make sure your conditions look as you expect them to look_</code>
 
 ## Test your code locally
+
+- It is now time to test the platform locally and make sure it appears as expected. Even after running the code locally (as described below), you can continue making changes, save them, and the local version will update automatically, allowing you to view your changes in real time..
 
 - Make sure your `backend/.env` is in `.gitignore` so your environment variables are not uploaded to your repository in github.
 
@@ -244,18 +276,18 @@ npm install
 npm start
 ```
 
-The app should open in your browser (usually at http://localhost:3000). To access your conditions, you add to your website line `/x` depending on the wording you chose in [Routes.js](#Pages_Folder)
+The app should open in your browser (usually at http://localhost:3000). To access your conditions, you add to your website line `/x` depending on the wording you chose in `Routes.js` file.
 
 To stop the local code from running, press `Ctrl+C`.
 
 > `npm install` is needed the first time you set up the project (or any time `package.json` changes).  
 > After that, you can usually run only `cd XXX` depending on the terminal, and `npm start`.
 
-# <font color = 'A057A'>_Step 3.2: Deployment to AWS so your experiment is ready to run._</font>
+# <code>_Step 3.2: Deployment to AWS so your experiment is ready to run._</code>
 
 ## Upload your code (ready-to-run): Amazon Web Services (AWS)
 
-If you wish to deploy your website (we recommend doing so in order to make sure this version of the code runs smoothly), you need to have an AWS account. Note that, the deployment of the web application may incur usage costs.
+Now that your experiment is ready to run, it is time to deploy it! For this step, you need to have an AWS account. Note that, the deployment of the web application may incur usage costs.
 
 Throughout the steps, please note that you choose your console's region (you can view your current region on the top left, next to your name).
 
@@ -311,16 +343,12 @@ Throughout the steps, please note that you choose your console's region (you can
         - Click on Hosting, environment variables, and add:
           `REACT_APP_API_BASE = UR_INVOKE_URL` >Amplify will build and give you a website URL.
 
-## Step 3.3: Download your submissions
+# <code>_Step 3.3: Download your submissions_</code>
 
 1. To download your submissions, you can access your S3 bucket and download each file.txt alone.
 2. To bulk download your submissions, follow the next steps:
-   1. **Create an IAM user for CLI**
-   2. AWS Console → IAM
-   3. Left menu → Users → Create user
-   4. Username: cli-downloader (or anything)
-   5. Permissions: choose Attach policies directly, create policy, JSON, and paste the content of `s3_policy_download.json` → create policy. Choose your policy and press next, then create user.
-   6. Click on your IAM new user name you just created, on security credentials, and create access key. Please select **Command Line Interface CLI**. Copy both the **access key** and **secret access** key and save them in a private place.
+
+   **Create an IAM user for CLI** 2. AWS Console → IAM 3. Left menu → Users → Create user 4. Username: cli-downloader (or anything) 5. Permissions: choose Attach policies directly, create policy, JSON, and paste the content of `s3_policy_download.json` → create policy. Choose your policy and press next, then create user. 6. Click on your IAM new user name you just created, on security credentials, and create access key. Please select **Command Line Interface CLI**. Copy both the **access key** and **secret access** key and save them in a private place.
 
 3. **Install AWS CLI** using the following [**link**](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
@@ -331,9 +359,7 @@ Throughout the steps, please note that you choose your console's region (you can
    aws s3 sync s3://YOUR_BUCKET_NAME "PATH/TO/Local/Folder"
    ```
 
-# <font color = 'A8057A'>_Step 4: Optional Data Cleaning._</font>
-
-# Optional code uses:
+# <code>_Step 4: Data Cleaning._</code>
 
 The following code is written in python, in case you do not have python installed, please install it from [the official Python page](https://www.python.org/downloads/).
 
