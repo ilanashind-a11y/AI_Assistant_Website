@@ -302,7 +302,7 @@ const AlwaysVisibleAI = () => {
               // CONFIG YOU WILL EDIT:
               // Initial messages shown in the chat.
               initialMessages={[
-                "Hello, this is a present message that you can edit in your code in AlwaysVisibleAI.js (theInitialMsg).",
+                "Hello, this is a present message that you can edit in your code in AlwaysVisibleAI.js (initialMessages).",
                 "This is the second message, you can edit, add more, or delete me.",
               ]}
               lastEditedText={currentLastEditedText}

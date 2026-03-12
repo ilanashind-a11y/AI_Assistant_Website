@@ -345,7 +345,7 @@ const ToggleableAI = () => {
               onMessagesSubmit={handleMessages}
               // CONFIG YOU WILL EDIT: present chat messages
               initialMessages={[
-                "Hello, this is a present message that you can edit in your code in ToggleableAI.js (theInitialMsg).",
+                "Hello, this is a present message that you can edit in your code in ToggleableAI.js (initialMessages).",
                 "This is the second message, you can edit, add more, or delete me.",
               ]}
               lastEditedText={currentLastEditedText}

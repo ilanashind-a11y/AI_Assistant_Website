@@ -372,7 +372,7 @@ const ParticipantInitiated = () => {
               // CONFIG YOU WILL EDIT:
               // Initial messages shown to participants in the chat
               initialMessages={[
-                "Hello, this is a present message that you can edit in your code in ParticipantInitiated.js (theInitialMsg).",
+                "Hello, this is a present message that you can edit in your code in ParticipantInitiated.js (initialMessages).",
                 "This is the second message, you can edit, add more, or delete me.",
               ]}
               lastEditedText={currentLastEditedText}

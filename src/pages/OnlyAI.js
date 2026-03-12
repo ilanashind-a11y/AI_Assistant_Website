@@ -207,7 +207,7 @@ const OnlyAI = () => {
               // CONFIG YOU WILL EDIT:
               // Initial messages shown in the chat.
               initialMessages={[
-                "Hello, this is a present message that you can edit in your code in OnlyAI.js (theInitialMsg).",
+                "Hello, this is a present message that you can edit in your code in OnlyAI.js (initialMessages).",
                 "This is the second message, you can edit, add more, or delete me.",
               ]}
               // chat-only page: no editor context
