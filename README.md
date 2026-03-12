@@ -1,6 +1,10 @@
 # A Tutorial for Building and Deploying a Web Application Platform for Experiments with Conversational AI
 
-The current repository includes a step-by-step tutorial to use a web application platform as experimental designs. Note that, although accessing the code is completely free to use, the code requires AI API keys and deployment on AWS, which may incur usage costs. For pricing, see the relevant sections and the official API website and AWS for more details.
+The tutorial introduces free open-source code, with detailed step-by-step instructions including the installation of the code, the deployment of the web application, and data cleaning suggestions. The open-source code is accompanied by detailed instructions and recommendations for adjustments to researchers' needs and preferences.
+
+Throughout the code files, researchers can look for relevant change suggestions (e.g., instructions presented to participants) by searching for `CONFIG YOU WILL EDIT` comments. These comments were written to allow optional user-friendly customization.
+
+Note that, although accessing the code is completely free to use, the code requires AI API keys and deployment on AWS, which may incur usage costs. For pricing, see the relevant sections and the official API website and AWS for more details.
 
 The README file offers a step-by-step instructions that are divided into four main steps:
 
@@ -18,6 +22,8 @@ The README file offers a step-by-step instructions that are divided into four ma
 4. [Data Cleaning](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#step-4-data-cleaning)
 
 # <code>_Step 1: Installation and Local Setup_</code>
+
+The first step is to have all the needed applications downloaded to your computer, in order to be able to run the platform locally and easily make later changes.
 
 # <code>_Step 1.1: Installation Required Applications_</code>
 
