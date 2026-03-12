@@ -183,7 +183,7 @@ First, it's time for you to define your goal, and follow the instructions below 
 | The effects of different instructions (writing about one vs. another topic).                                                                                                  | Change the instructions as specified in the condition file (same condition).                                                           | Change the instructions as specified in the condition file (same condition, duplicated). |
 | Use the conversational AI as an addition to the experiments for greater control and an easier record of all messages exchanged between participants and the conversational AI | Conversational AI Only                                                                                                                 |
 
-# <code>_Step 2.2 Details regarding each experimental condition_ </code>
+# <code>_Step 2.2: Details regarding each experimental condition_ </code>
 
 Now that you defined your goal, and decided on the conditions you will use for your experiment. Time to learn more in depth about each of the experimental conditions.
 
@@ -242,6 +242,8 @@ We remind you that if you want to view all possible adjustments you can press `S
 
 Moreover, make sure you are working with the LLM version you like, as specified earlier in step 1.2.
 
+Finally, after the participants submit their responses, they are redirected to a thank-you page that instructs them on how to continue. Please edit the thank-you page by accessing the `thankyou.js` file, located in the `src/pages` folder, to match the flow of your study.
+
 ## App.css
 
 App.css is the main file that controls how the app looks (colors, spacing, fonts, layout). Therefore, if you needed to change anything regarding the _style_ of the page, you will need to change the elements in `App.css`:
@@ -255,6 +257,8 @@ To preview and debug style changes, open **Chrome DevTools**:
 Then click the **Elements** tab, select an element on the page, and you’ll see the CSS rules (including from `App.css`) on the right side.
 
 # <code>_Step 3: Local Testing and Deployment_</code>
+
+By now, you have an experiment ready to run! The third step is to test the platform locally and make sure the experiment looks as desired, and then deploy it as a web application!
 
 # <code>_Step 3.1: Local testing to make sure your conditions look as you expect them to look_</code>
 
@@ -293,7 +297,7 @@ To stop the local code from running, press `Ctrl+C`.
 
 Now that your experiment is ready to run, it is time to deploy it! For this step, you need to have an AWS account. Note that, the deployment of the web application may incur usage costs.
 
-Throughout the steps, please note that you choose your console's region (you can view your current region on the top left, next to your name).
+Throughout the steps, please note that you are working within the same console's region (you can view your current region on the top left, next to your name).
 
 1.  To create an account, please [**click here**](portal.aws.amazon.com/billing/signup).
 2.  Choose a region you’ll use consistently (example: `eu-north-1`).
@@ -345,7 +349,9 @@ Throughout the steps, please note that you choose your console's region (you can
           > Click Next → Next → Save and deploy
 
         - Click on Hosting, environment variables, and add:
-          `REACT_APP_API_BASE = UR_INVOKE_URL` >Amplify will build and give you a website URL.
+          `REACT_APP_API_BASE = UR_INVOKE_URL`
+
+          > Amplify will build and give you a website URL.
 
 # <code>_Step 3.3: Download your submissions_</code>
 
