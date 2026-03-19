@@ -78,7 +78,9 @@ After you download github, to save this code and get it ready to edit, follow th
    Now you are free to start editing and saving your changes locally and in github:
 
 8. Next, open the local repository in your preferred IDE (for exmaple, using [Visual Studio Code](https://code.visualstudio.com/)).
-   Throughout the code, you can look for relevant change suggestions by searching **`CONFIG YOU WILL EDIT`**. To search for this term across files, you can click `Ctrl+shift+f`. Now, you can make a small change just to test that your changes are being saved. For example, open the `ThankYou.js` file, which is located in `src/pages` folder, and change "Your submission was recorded!" to "This is the new submission message!".
+   Throughout the code, you can look for relevant change suggestions by searching **`CONFIG YOU WILL EDIT`**. To search for this term across files, you can click `Ctrl+shift+f`.
+
+   Now, you can make a small change just to test that your changes are being saved. For example, open the `ThankYou.js` file, which is located in `src/pages` folder, and change "Your submission was recorded!" to "This is the new submission message!".
 
 9. Save your changes, by saving the file, and then push them to your fork:
 
@@ -170,13 +172,15 @@ After downloading all the required applications, having your own copy of the cod
 
 First, you need to define your goal, and follow the instructions below to find the experimental conditions most suitable for your goal. The platform allows you to choose between some or all of the five experimental conditions and to update them. Here, we provide a table which includes examples of experimental conditions that can be used to test different research questions.
 
-| Condition                 | Research Purpose                                                                                                                                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| No LLM                    | This condition includes only a text editor. It allows examining your dependent variable (DV) without having access to an LLM Assistant, and can serve as a control condition to all others.                                                       |
-| Always Visible LLM        | This condition includes a text editor alongside an LLM Assistant window that remains visible throughout the task. It allows examining your DV when LLM Assistance is continuously available.                                                      |
-| Toggleable LLM            | This condition includes a text editor alongside an LLM Assistant window that participants can close and reopen. It allows examining your DV when participants have control over the visibility of the LLM Assistant window.                       |
-| Participant-Initiated LLM | This condition includes a text editor alongside an LLM Assistant window that opens only after participants press a button. It allows examining your DV when participants initiate the LLM Assistant window rather than being proactively offered. |
-| Chat Only                 | This condition includes only the LLM Assistant window. It allows examining your DV when participants produce their writing only by interacting with the LLM Assistant, without an option to independently write in a text editor.                 |
+> Note that in the paper, we include example usage of a set of experimental conditions to test different research goals.
+
+| Condition                 | Research Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| No LLM                    | This condition includes only a text editor. It allows examining your dependent variable (DV) without having access to an LLM Assistant, and can serve as a control condition to all others.                                                                                                                                                                                                                                                                                                           |
+| Always Visible LLM        | TThis condition includes a text editor alongside an LLM assistant window that remains visible throughout the task. It allows examining your DV when LLM assistance is highly available and continuously salient.                                                                                                                                                                                                                                                                                      |
+| Toggleable LLM            | This condition includes a text editor alongside an LLM assistant window that participants can close and reopen. It allows examining your DV when participants have control over the visibility of the LLM assistant window. Thus, making this condition especially useful when studying help-seeking decisions.                                                                                                                                                                                       |
+| Participant-Initiated LLM | This condition includes a text editor alongside an LLM assistant that opens only after participants press a button. It allows examining your DV when participants initiate the LLM assistant window rather than being proactively offered, placing greater emphasis on intentional help seeking. Thus, this condition may be especially useful when the goal is to examine the threshold for consulting the LLM assistant and the circumstances under which participants decide they need assistance. |
+| Chat Only                 | This condition includes only the LLM assistant window. It allows examining your DV when participants produce their writing only by interacting with the LLM assistant, without an option to independently write in a text editor. Thus, this condition may be especially useful when the LLM is not merely a support tool but the primary medium through which text is produced.                                                                                                                      |
 
 # <code>_Step 2.2: Details regarding each experimental condition_ </code>
 
@@ -187,18 +191,18 @@ After participants successfully submit their response, a pop-up message will ins
 The following presents the five experimental conditions the platform offers in more detail, and instructions on how to duplicate conditions. Note that all conditions are located in the `src/pages` folder:
 
 1. **No LLM Condition**:
-   - This condition includes only a text editor. Participants do not have the option to use an LLM Assistant. The condition can serve as a control condition for all other conditions, where participants have the option to use an LLM Assistant.
+   - This condition includes only a text editor. Thus, participants complete the task using the text editor only, without the option to use LLM assistance. The condition can serve as a control condition for all other conditions, where participants have the option to use an LLM assistant.
    - **_Route Suffix_**: Add `/c` to the base link of the platform, can be adjusted in `Routes.js` file, located in the pages folder.
    - **_Default participant-code_**: A default prefix of "NL" and a suffix of C.
 
 1. **Always Visible LLM Condition**:
-   - This condition includes a text editor and an LLM Assistant interface. Participants constantly have the option to use an LLM Assistant.
+   - This condition includes a text editor and an LLM assistant interface. Participants constantly have the option to use LLM assistance throughout the task.
    - **_Differences from other conditions_**: In this condition, the LLM Assistant automatically appears next to participants' text editor after a set number of seconds (the default is 100 milliseconds, so the LLM Assistant appears immediately upon page load). Participants cannot control (close and reopen) the LLM Assistant interface.
    - **_Route Suffix_**: Add `/u` to the base link of the platform, can be adjusted in `Routes.js` file, located in the pages folder.
    - **_Default participant-code_**: A default prefix of "AVL" and a suffix of U.
 
 1. **Toggleable LLM Condition**:
-   - This condition includes a text editor and a toggleable LLM Assistant interface, meaning that participants can close and reopen the LLM Assistant.
+   - This condition includes a text editor and a toggleable LLM assistant interface, meaning that participants can close and reopen the LLM assistant interface throughout the task.
    - **_Differences from other conditions_**: Compared to the Always Visible LLM condition, in which the LLM is constantly visible, here, participants can close and reopen the LLM Assistant interface.
    - **_Route Suffix_**: Add `/o` to the base link of the platform, can be adjusted in `Routes.js` file, located in the pages folder.
    - **_Default participant-code_**: A default prefix of "TL" and a suffix of O.
@@ -214,11 +218,13 @@ The following presents the five experimental conditions the platform offers in m
    - **_Route Suffix_**: Add `/a` to the base link of the platform, can be adjusted in `Routes.js` file, located in the pages folder.
    - **_Default participant-code_**: A default prefix of "OA" and a suffix of A.
 
-> Note: In all conditions, participants who try to submit before they meet the adjustable word count threshold and minimum time spent in the writing task (default thresholds are 50 words and 3 minutes) will receive a customizable pop-up message. Moreover, in all conditions, after participants submit their responses, they are directed to a thank-you page (`thankyou.js` file, located in `src/pages` folder) that instructs participants on how to continue the study. Finally, in all conditions that include an LLM Assistant window, the window includes messages displayed to participants that can be customized or deleted. These messages can be customized to instruct or encourage participants to interact with the LLM Assistant.
+> Note: In all conditions, participants who try to submit before they meet the adjustable word count threshold and minimum time spent in the writing task (default thresholds are 50 words and 3 minutes) will receive a customizable pop-up message.
+>
+> Moreover, in all conditions, after participants submit their responses, they are directed to a thank-you page (`thankyou.js` file, located in `src/pages` folder) that instructs participants on how to continue the study. Finally, in all conditions that include an LLM Assistant window, the window includes messages displayed to participants that can be customized or deleted. These messages can be customized to instruct or encourage participants to interact with the LLM Assistant.
 
 **Creating new conditions**:
 
-- **_Purpose_**: In addition to selecting the experimental conditions, several features within each of the conditions can be customized, and thus, allow the comparison of the condition and its duplicated version to compare certain features. Creating new conditions allows testing differences between several features of the same original condition, such as the option to copy and paste, LLMs powering the LLM Assistant, background information given to the LLM Assistant, etc.
+- **_Purpose_**: In addition to selecting the experimental conditions, several features within each of the conditions can be customized, and thus, allow the comparison of the condition and its duplicated version to compare certain features. Creating new conditions allows testing differences between several features of the same original condition, such as the option to copy and paste, LLM types, background information given to the LLM Assistant, etc.
 - **_How to duplicate_**:
   1. Create a new JavaScript file (.js file) by pressing the 'new file' button.
   2. Copy-paste the original condition's content into the new one.
