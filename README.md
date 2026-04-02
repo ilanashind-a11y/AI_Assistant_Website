@@ -20,7 +20,7 @@ The README file offers a step-by-step instructions that are divided into four ma
    2. [Deploying the web application](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#step-32-deploying-the-web-application)
    3. [Downloading the submissions](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#download-your-submissions)
    4. [Getting to know your data](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#step-34-getting-to-know-your-data)
-4. [Data Cleaning or Analysis Codes](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#step-4-data-cleaning)
+4. [Data Cleaning or Analysis Codes](https://github.com/atilmansour/AI_Assistant_Website?tab=readme-ov-file#step-4-data-analysis-codes)
 
 # <code>_Step 1: Installation and Local Setup_</code>
 
