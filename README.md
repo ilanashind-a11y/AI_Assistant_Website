@@ -1,4 +1,4 @@
-# A Tutorial for Building and Deploying a Web Application Platform for Experiments with LLM Assistants
+# A Tutorial for Using an Open-Source Platform for Controlled Experiments with LLM Assistance
 
 The tutorial introduces free open-source code, with detailed step-by-step instructions including the installation of the code, building experimental conditions, the deployment of the web application, and data cleaning suggestions. The open-source code is accompanied by detailed instructions and recommendations for adjustments to your needs and preferences.
 
